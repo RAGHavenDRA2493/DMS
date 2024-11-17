@@ -1,0 +1,24 @@
+### Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser@1234",
+  "password": "testpassword"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+### Upload Document
+POST http://localhost:5000/api/documents/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzgyMjI1NTI0NGRmMjY1ODQ3ZTUxMCIsImlhdCI6MTczMTc3OTI0OCwiZXhwIjoxNzMxNzgyODQ4fQ.-cLGAoPedY3_7D35m0OauXa7htWF0BkKxyaML3tiHtQ  # Replace <your_token> with the JWT token
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary...
+
+file=@backend\mydocument.txt;
